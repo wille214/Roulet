@@ -77,8 +77,6 @@ while (ContiniuRuning)
                         }
                         else
                         {
-                        for (int i = 0; i < 1; i++)
-                        {
                             int randomtall = random.Next(38);
                             //röd
                             if (randomtall % 2 == 0 && color == 1)
@@ -113,9 +111,8 @@ while (ContiniuRuning)
                                 Console.WriteLine(" You Lost " + number2 + " kr ");
                                 Console.WriteLine(" Start [Y] leave [E] ");
                                 yesorno = Console.ReadLine();
-                            }
+                            } 
                         }
-                    }
                 }   
                 else if (gamemode == 2)
                 {
@@ -190,37 +187,32 @@ while (ContiniuRuning)
                         yesorno = Console.ReadLine();
                     }
                     else
-                    {
-                        for (int i = 0; i < 1; i++)
+                    {  
+                        int randomtall = rand.Next(38);
+                        //won jämn
+                        if (randomtall % 2 == 0 && jemn == 2)
                         {
-                            int randomtall = rand.Next(38);
-
-                            //won jämn
-                            if (randomtall % 2 == 0 && jemn == 1)
-                            {
-                                number = number2 * 2 + number;
-                                Console.WriteLine(" You won " + number2 * 2 + " kr ");
-                                Console.WriteLine(" Start [Y] leave [E] ");
-                                yesorno = Console.ReadLine();
-                            }
-
-                            //won ojämn
-                            else if (randomtall == 0 && jemn == 3)
-                            {
-                                number = number2 * 2 + number;
-                                Console.WriteLine(" You won " + number2 * 2 + " kr ");
-                                Console.WriteLine(" Start [Y] leave [E] ");
-                                yesorno = Console.ReadLine();
-                            }
-                            //lost
-                            else
-                            {
-                                number = number - number2;
-                                Console.WriteLine(" You lost " + number2 + " kr ");
-                                Console.WriteLine(" Start [Y] leave [E] ");
-                                yesorno = Console.ReadLine();
-                            }
+                            number = number2 * 2 + number;
+                            Console.WriteLine(" You won " + number2 * 2 + " kr ");
+                            Console.WriteLine(" Start [Y] leave [E] ");
+                            yesorno = Console.ReadLine();
                         }
+                        //won ojämn
+                        else if (randomtall == 0 && jemn == 1)
+                        {
+                            number = number2 * 2 + number;
+                            Console.WriteLine(" You won " + number2 * 2 + " kr ");
+                            Console.WriteLine(" Start [Y] leave [E] ");
+                            yesorno = Console.ReadLine();
+                        }
+                        //lost
+                        else
+                        {
+                            number = number - number2;
+                            Console.WriteLine(" You lost " + number2 + " kr ");
+                            Console.WriteLine(" Start [Y] leave [E] ");
+                            yesorno = Console.ReadLine();
+                        } 
                     }
                 }   
             }
